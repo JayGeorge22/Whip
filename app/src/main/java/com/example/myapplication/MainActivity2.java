@@ -67,26 +67,30 @@ public class MainActivity2 extends AppCompatActivity {
         preset2 = (Button) findViewById(R.id.preset2);
         preset3 = (Button) findViewById(R.id.preset3);
 
-        setQr("preset 1");
+        contact infoPreset1 = new contact();
+        contact infoPreset2 = new contact();
+        contact infoPreset3 = new contact();
+
+        setQr(infoPreset1.name);
 
         preset1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setQr("preset 1");
+                setQr(infoPreset1.name);
             }
         });
 
         preset2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setQr("preset 2");
+                setQr(infoPreset2.name);
             }
         });
 
         preset3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setQr("preset 3");
+                setQr(infoPreset3.name);
             }
         });
 

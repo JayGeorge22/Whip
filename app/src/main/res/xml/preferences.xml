@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="General">
+
+    <ListPreference
+        android:defaultValue="1"
+        app:key="theme"
+        android:dialogTitle="Change Theme"
+        android:title="Change Theme"
+        android:entries="@array/pref_themes"
+        android:entryValues="@array/pref_themes_vals" />
+    <Preference
+        app:key="logout"
+        android:title="Log Out" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Preset 1">
+
+        <EditTextPreference
+            app:key="name1"
+            android:title="Name"
+            android:summary="Edit"/>
+
+        <EditTextPreference
+            app:key="phone1"
+            android:title="Phone"
+            android:summary="Edit"/>
+
+        <EditTextPreference
+            app:key="email1"
+            android:title="Email"
+            android:summary="Edit"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Preset 2">
+
+        <EditTextPreference
+            app:key="name2"
+            android:title="Name"
+            android:summary="Edit"/>
+
+        <EditTextPreference
+            app:key="phone2"
+            android:title="Phone"
+            android:summary="Edit"/>
+
+        <EditTextPreference
+            app:key="email2"
+            android:title="Email"
+            android:summary="Edit"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Preset 3">
+
+        <EditTextPreference
+            app:key="name3"
+            android:title="Name"
+            android:summary="Edit"/>
+
+        <EditTextPreference
+            app:key="phone3"
+            android:title="Phone"
+            android:summary="Edit"/>
+
+        <EditTextPreference
+            app:key="email3"
+            android:title="Email"
+            android:summary="Edit"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

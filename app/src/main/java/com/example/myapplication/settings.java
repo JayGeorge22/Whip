@@ -15,9 +15,8 @@ public class settings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Intent intent = getIntent();
         setContentView(R.layout.activity_settings);
-        setTitle("Whip");
+        setTitle("Settings");
 
         qr =(Button)findViewById(R.id.qr);
         scan =(Button)findViewById(R.id.scan);
@@ -47,5 +46,17 @@ public class settings extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        if (findViewById(R.id.idFrameLayout) != null) {
+            if (savedInstanceState != null) {
+                return;
+            }
+            // below line is to inflate our fragment.
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.idFrameLayout, new settingsFragment())
+                    .commit();
+
+        }
     }
 }
