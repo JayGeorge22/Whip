@@ -7,13 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 public class MainActivity2 extends AppCompatActivity {
     Button qr;
@@ -31,10 +34,10 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         setTitle("Whip");
 
-        qr =(Button)findViewById(R.id.qr);
-        scan =(Button)findViewById(R.id.scan);
-        contacts =(Button)findViewById(R.id.contacts);
-        settings =(Button)findViewById(R.id.settings);
+        qr = findViewById(R.id.qr);
+        scan = findViewById(R.id.scan);
+        contacts = findViewById(R.id.contacts);
+        settings = findViewById(R.id.settings);
 
         scan.setOnClickListener(new View.OnClickListener() {
 
@@ -71,45 +74,53 @@ public class MainActivity2 extends AppCompatActivity {
         contact infoPreset2 = new contact();
         contact infoPreset3 = new contact();
 
-        setQr(infoPreset1.name);
+        setQr(infoPreset1.link);
 
         preset1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setQr(infoPreset1.name);
+                setQr(infoPreset1.link);
             }
         });
 
         preset2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setQr(infoPreset2.name);
+                if (infoPreset2.link != "null") {
+                    setQr(infoPreset2.link);
+                }
+                else{
+                    Toast toast = Toast.makeText(getApplicationContext(), "No preset has been made", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
 
         preset3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setQr(infoPreset3.name);
+                if (infoPreset3.link != "null") {
+                    setQr(infoPreset3.link);
+                }
+                else{
+                    Toast toast = Toast.makeText(getApplicationContext(), "No preset has been made", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
 
 
     }
-    public void setQr(String content) {
-        QRCodeWriter writer = new QRCodeWriter();
-        try {
-            BitMatrix bitMatrix = writer.encode(content, BarcodeFormat.QR_CODE, 512, 512);
-            int width = bitMatrix.getWidth();
-            int height = bitMatrix.getHeight();
-            Bitmap bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
-            for (int x = 0; x < width; x++) {
-                for (int y = 0; y < height; y++) {
-                    bmp.setPixel(x, y, bitMatrix.get(x, y) ? Color.BLACK : Color.WHITE);
-                }
-            }
-            ((ImageView) findViewById(R.id.qrCodeImage)).setImageBitmap(bmp);
 
+    MultiFormatWriter writer = new MultiFormatWriter();
+
+    public void setQr(String content) {
+        try {
+            BitMatrix matrix = writer.encode(content, BarcodeFormat.QR_CODE, 300, 300);
+            BarcodeEncoder encoder = new BarcodeEncoder();
+            Bitmap bitmap = encoder.createBitmap(matrix);
+            ImageView imageViewQrCode = (ImageView) findViewById(R.id.qrCodeImage);
+            imageViewQrCode.setImageBitmap(bitmap);
         } catch (WriterException e) {
             e.printStackTrace();
         }
