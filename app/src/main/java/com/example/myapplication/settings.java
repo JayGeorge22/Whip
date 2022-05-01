@@ -23,6 +23,14 @@ public class settings extends AppCompatActivity {
         contacts =(Button)findViewById(R.id.contacts);
         settings =(Button)findViewById(R.id.settings);
 
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(settings.this, settings.class);
+                startActivity(intent);
+            }
+        });
+
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

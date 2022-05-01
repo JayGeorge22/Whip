@@ -12,65 +12,28 @@
         android:entries="@array/pref_themes"
         android:entryValues="@array/pref_themes_vals" />
     <Preference
+        app:fragment="com.example.myapplication.logoutFragment"
         app:key="logout"
         android:title="Log Out" />
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Preset 1">
+    <PreferenceCategory android:title="Presets">
 
-        <EditTextPreference
-            app:key="name1"
-            android:title="Name"
-            android:summary="Edit"/>
+    <Preference
+        app:fragment="com.example.myapplication.editPresetFragment"
+        app:key="preset1"
+        android:title="Edit Preset 1"/>
 
-        <EditTextPreference
-            app:key="phone1"
-            android:title="Phone"
-            android:summary="Edit"/>
+    <Preference
+        app:fragment="com.example.myapplication.editPresetFragment2"
+        app:key="preset2"
+        android:title="Edit Preset 2"/>
 
-        <EditTextPreference
-            app:key="email1"
-            android:title="Email"
-            android:summary="Edit"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="Preset 2">
-
-        <EditTextPreference
-            app:key="name2"
-            android:title="Name"
-            android:summary="Edit"/>
-
-        <EditTextPreference
-            app:key="phone2"
-            android:title="Phone"
-            android:summary="Edit"/>
-
-        <EditTextPreference
-            app:key="email2"
-            android:title="Email"
-            android:summary="Edit"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory android:title="Preset 3">
-
-        <EditTextPreference
-            app:key="name3"
-            android:title="Name"
-            android:summary="Edit"/>
-
-        <EditTextPreference
-            app:key="phone3"
-            android:title="Phone"
-            android:summary="Edit"/>
-
-        <EditTextPreference
-            app:key="email3"
-            android:title="Email"
-            android:summary="Edit"/>
+    <Preference
+        app:fragment="com.example.myapplication.editPresetFragment3"
+        app:key="preset3"
+        android:title="Edit Preset 3"/>
 
     </PreferenceCategory>
 
