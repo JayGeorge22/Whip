@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.SharedPreferences;
 
 public class contact {
+    public String link = "null";
     public String name = "null";
     public String phone = "null";
     public String email = "null";
