@@ -1,19 +1,12 @@
 package com.example.myapplication;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.preference.PreferenceFragmentCompat;
 
 public class settingsFragment extends PreferenceFragmentCompat {
-
-    SharedPreferences.OnSharedPreferenceChangeListener listener =
-            new SharedPreferences.OnSharedPreferenceChangeListener() {
-                @Override
-                public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
-
-                }
-            };
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,6 +17,26 @@ public class settingsFragment extends PreferenceFragmentCompat {
         addPreferencesFromResource(R.xml.preferences);
 
     }
+
+    SharedPreferences.OnSharedPreferenceChangeListener listener =
+            new SharedPreferences.OnSharedPreferenceChangeListener() {
+                @Override
+                public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                    int switchVal = Character.getNumericValue((key.charAt(key.length() - 1)));
+                    Log.d("STATE", "key is " + key);
+                    switch(switchVal) {
+                        case 1:
+                            MainActivity2.infoPreset1.updateContactSP(key, sharedPreferences);
+                            break;
+                        case 2:
+                            MainActivity2.infoPreset2.updateContactSP(key, sharedPreferences);
+                            break;
+                        case 3:
+                            MainActivity2.infoPreset3.updateContactSP(key, sharedPreferences);
+                            break;
+                    }
+                }
+            };
 
     @Override
     public void onCreatePreferences(@Nullable Bundle savedInstanceState, @Nullable String rootKey) {

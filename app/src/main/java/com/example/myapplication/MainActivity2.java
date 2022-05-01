@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.content.SharedPreferences;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
@@ -25,6 +27,10 @@ public class MainActivity2 extends AppCompatActivity {
     Button preset2;
     Button preset3;
 
+    static contact infoPreset1 = new contact();
+    static contact infoPreset2 = new contact();
+    static contact infoPreset3 = new contact();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +46,7 @@ public class MainActivity2 extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent(MainActivity2.this, scan.class);
+                Intent intent = new Intent(MainActivity2.this, scan.class);
                 startActivity(intent);
             }
         });
@@ -67,9 +73,12 @@ public class MainActivity2 extends AppCompatActivity {
         preset2 = (Button) findViewById(R.id.preset2);
         preset3 = (Button) findViewById(R.id.preset3);
 
-        contact infoPreset1 = new contact();
-        contact infoPreset2 = new contact();
-        contact infoPreset3 = new contact();
+        SharedPreferences SP =
+                PreferenceManager.getDefaultSharedPreferences(getApplicationContext() );
+
+        infoPreset1.setContact(SP, "name1", "email1", "phone1");
+        infoPreset2.setContact(SP, "name2", "email2", "phone2");
+        infoPreset3.setContact(SP, "name3", "email3", "phone3");
 
         setQr(infoPreset1.name);
 
