@@ -13,90 +13,106 @@
         android:layout_height="300dp"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="315dp"
         android:contentDescription="@string/qr_code"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/qr"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:layout_marginStart="1dp"
+        android:layout_marginEnd="310dp"
         app:icon="@drawable/qr_icon"
-        app:iconSize="40dp"
         app:iconGravity="textStart"
+        app:iconSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/scan"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:layout_alignParentTop="true"
         android:layout_marginStart="104dp"
+        android:layout_marginEnd="207dp"
         app:icon="@drawable/scan_icon"
-        app:iconSize="40dp"
         app:iconGravity="textStart"
+        app:iconSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/contacts"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="207dp"
         android:layout_marginEnd="104dp"
         app:icon="@drawable/contacts_icon"
-        app:iconSize="40dp"
         app:iconGravity="textStart"
+        app:iconSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/settings"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="310dp"
         android:layout_marginEnd="1dp"
         app:icon="@drawable/settings_icon"
-        app:iconSize="40dp"
         app:iconGravity="textStart"
+        app:iconSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/preset1"
         android:layout_width="100dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="52dp"
         android:layout_marginEnd="259dp"
         android:layout_marginBottom="172dp"
         android:text="preset 1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/preset2"
         android:layout_width="100dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="155dp"
         android:layout_marginEnd="156dp"
         android:layout_marginBottom="172dp"
         android:text="preset 2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/preset3"
         android:layout_width="100dp"
         android:layout_height="75dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="258dp"
         android:layout_marginEnd="53dp"
         android:layout_marginBottom="172dp"
         android:text="preset 3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

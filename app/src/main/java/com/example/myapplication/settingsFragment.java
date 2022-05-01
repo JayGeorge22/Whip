@@ -1,4 +1,5 @@
 package com.example.myapplication;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,17 +24,21 @@ public class settingsFragment extends PreferenceFragmentCompat {
                 @Override
                 public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
                     int switchVal = Character.getNumericValue((key.charAt(key.length() - 1)));
-                    Log.d("STATE", "key is " + key);
-                    switch(switchVal) {
-                        case 1:
-                            MainActivity2.infoPreset1.updateContactSP(key, sharedPreferences);
-                            break;
-                        case 2:
-                            MainActivity2.infoPreset2.updateContactSP(key, sharedPreferences);
-                            break;
-                        case 3:
-                            MainActivity2.infoPreset3.updateContactSP(key, sharedPreferences);
-                            break;
+                    if(switchVal >= 1 && switchVal <= 3) {
+                        switch (switchVal) {
+                            case 1:
+                                MainActivity2.infoPreset1.updateContactSP(key, sharedPreferences);
+                                break;
+                            case 2:
+                                MainActivity2.infoPreset2.updateContactSP(key, sharedPreferences);
+                                break;
+                            case 3:
+                                MainActivity2.infoPreset3.updateContactSP(key, sharedPreferences);
+                                break;
+                        }
+                    }else if(key.equals("logout")) {
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        startActivity(intent);
                     }
                 }
             };
