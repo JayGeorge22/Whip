@@ -68,4 +68,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/qrScan"
+        android:layout_width="100dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="300dp"
+        app:iconGravity="textStart"
+        app:iconSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
