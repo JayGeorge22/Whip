@@ -86,9 +86,9 @@ public class MainActivity2 extends AppCompatActivity {
         SharedPreferences SP =
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext() );
 
-        infoPreset1.setContact(SP, "name1", "email1", "phone1");
-        infoPreset2.setContact(SP, "name2", "email2", "phone2");
-        infoPreset3.setContact(SP, "name3", "email3", "phone3");
+        infoPreset1.setContact(SP, "name1", "email1", "phone1", "", "", "");
+        infoPreset2.setContact(SP, "name2", "email2", "phone2", "", "", "");
+        infoPreset3.setContact(SP, "name3", "email3", "phone3", "", "", "");
 
         setQr(infoPreset1.link);
 
