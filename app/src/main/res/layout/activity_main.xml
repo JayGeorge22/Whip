@@ -34,7 +34,7 @@
         android:id="@+id/loginbutton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:background="@android:drawable/editbox_background_normal"
         android:backgroundTint="#FF0000"
         android:text="Login"
@@ -46,7 +46,7 @@
     <Button
         android:id="@+id/registerbutton"
         android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_height="60dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="428dp"
         android:background="@android:color/transparent"
@@ -59,7 +59,7 @@
     <Button
         android:id="@+id/forgetpass"
         android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_height="60dp"
         android:layout_marginStart="292dp"
         android:layout_marginTop="428dp"
         android:background="@android:color/transparent"

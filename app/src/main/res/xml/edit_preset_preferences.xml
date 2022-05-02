@@ -16,4 +16,19 @@
         android:title="Email"
         android:summary="Edit"/>
 
+    <EditTextPreference
+        app:key="instagram1"
+        android:title="Instagram"
+        android:summary="Edit"/>
+
+    <EditTextPreference
+        app:key="snapchat1"
+        android:title="Snapchat"
+        android:summary="Edit"/>
+
+    <EditTextPreference
+        app:key="twitter1"
+        android:title="Twitter"
+        android:summary="Edit"/>
+
 </PreferenceScreen>
