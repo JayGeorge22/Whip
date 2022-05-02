@@ -4,13 +4,13 @@
 
     <PreferenceCategory android:title="General">
 
-    <ListPreference
-        android:defaultValue="1"
-        app:key="theme"
-        android:dialogTitle="Change Theme"
-        android:title="Change Theme"
-        android:entries="@array/pref_themes"
-        android:entryValues="@array/pref_themes_vals" />
+        <ListPreference
+            android:defaultValue="1"
+            android:dialogTitle="Change Theme"
+            android:entries="@array/pref_themes"
+            android:entryValues="@array/pref_themes_vals"
+            android:title="Change Theme"
+            app:key="theme" />
     <Preference
         app:fragment="com.example.myapplication.logoutFragment"
         app:key="logout"
@@ -30,10 +30,10 @@
         app:key="preset2"
         android:title="Edit Preset 2"/>
 
-    <Preference
-        app:fragment="com.example.myapplication.editPresetFragment3"
-        app:key="preset3"
-        android:title="Edit Preset 3"/>
+        <Preference
+            android:title="Edit Preset 3"
+            app:fragment="com.example.myapplication.editPresetFragment3"
+            app:key="preset3" />
 
     </PreferenceCategory>
 
