@@ -1,10 +1,7 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="title_activity_main2">MainActivity2</string>
-    <string name="qr_code">qr_code</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">Whip!</string>
+    <string name="title_activity_main2">Home</string>
+    <string name="qr_code">QR code</string>
 
     <string-array name="pref_presets">
         <item>Preset 1</item>
