@@ -17,11 +17,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 
 import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity2 extends AppCompatActivity {
     Button qr;
@@ -128,7 +132,9 @@ public class MainActivity2 extends AppCompatActivity {
 
     public void setQr(String content) {
         try {
-            BitMatrix matrix = writer.encode(content, BarcodeFormat.QR_CODE, 300, 300);
+            Map<EncodeHintType, Object> hints = new HashMap<>();
+            hints.put(EncodeHintType.MARGIN, 0);//changes white border from default to 0
+            BitMatrix matrix = writer.encode(content, BarcodeFormat.QR_CODE, 300, 300, hints);
             BarcodeEncoder encoder = new BarcodeEncoder();
             Bitmap bitmap = encoder.createBitmap(matrix);
             ImageView imageViewQrCode = (ImageView) findViewById(R.id.qrCodeImage);
