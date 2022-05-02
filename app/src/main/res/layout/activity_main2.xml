@@ -5,7 +5,9 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize">
+    android:paddingTop="?attr/actionBarSize"
+    android:background="@drawable/img_1">
+
 
     <ImageView
         android:id="@+id/qrCodeImage"
@@ -26,7 +28,8 @@
         android:layout_height="75dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="300dp"
-        app:icon="@drawable/qr_icon"
+        android:background="@drawable/outline_button"
+        app:icon="@drawable/qr_icon_black"
         app:iconGravity="textStart"
         app:iconSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,6 +43,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="200dp"
+        android:background="@drawable/outline_button"
         app:icon="@drawable/scan_icon"
         app:iconGravity="textStart"
         app:iconSize="40dp"
@@ -55,6 +59,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="200dp"
         android:layout_marginEnd="100dp"
+        android:background="@drawable/outline_button"
         app:icon="@drawable/contacts_icon"
         app:iconGravity="textStart"
         app:iconSize="40dp"
@@ -69,6 +74,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="300dp"
         android:layout_marginEnd="10dp"
+        android:background="@drawable/outline_button"
         app:icon="@drawable/settings_icon"
         app:iconGravity="textStart"
         app:iconSize="40dp"
@@ -84,7 +90,9 @@
         android:layout_marginStart="52dp"
         android:layout_marginEnd="259dp"
         android:layout_marginBottom="140dp"
+        android:background="@drawable/outline_button"
         android:text="preset 1"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -97,7 +105,9 @@
         android:layout_marginStart="155dp"
         android:layout_marginEnd="156dp"
         android:layout_marginBottom="140dp"
+        android:background="@drawable/outline_button"
         android:text="preset 2"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -110,7 +120,9 @@
         android:layout_marginStart="258dp"
         android:layout_marginEnd="53dp"
         android:layout_marginBottom="140dp"
+        android:background="@drawable/outline_button"
         android:text="preset 3"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
