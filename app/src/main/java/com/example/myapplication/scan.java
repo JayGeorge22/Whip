@@ -67,6 +67,8 @@ public class scan extends AppCompatActivity {
                 intentIntegrator.initiateScan();
             }
         });
+
+
     }
 
     @Override

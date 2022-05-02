@@ -6,13 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".scan">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="scanner"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/qr"
         android:layout_width="wrap_content"
@@ -71,10 +64,11 @@
 
     <Button
         android:id="@+id/qrScan"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="75dp"
-        android:layout_marginEnd="156dp"
+        android:layout_marginEnd="152dp"
         android:layout_marginBottom="300dp"
+        android:text="launch\nscanner"
         app:iconGravity="textStart"
         app:iconSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
