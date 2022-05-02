@@ -24,20 +24,7 @@ public class settingsFragment extends PreferenceFragmentCompat {
             new SharedPreferences.OnSharedPreferenceChangeListener() {
                 @Override
                 public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                    int switchVal = Character.getNumericValue((key.charAt(key.length() - 1)));
-                    if(switchVal >= 1 && switchVal <= 3) {
-                        switch (switchVal) {
-                            case 1:
-                                MainActivity2.infoPreset1.updateContactSP(key, sharedPreferences);
-                                break;
-                            case 2:
-                                MainActivity2.infoPreset2.updateContactSP(key, sharedPreferences);
-                                break;
-                            case 3:
-                                MainActivity2.infoPreset3.updateContactSP(key, sharedPreferences);
-                                break;
-                        }
-                    }else if(key.equals("logout")) {
+                    if(key.equals("logout")) {
                         Intent intent = new Intent(getActivity(), MainActivity.class);
                         startActivity(intent);
                     }else if(key.equals("theme")) {

@@ -30,14 +30,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/password"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/outline_button"
-        android:text="Login" />
+        android:text="Login"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/registerbutton"
         android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="420dp"
         android:background="@android:color/transparent"
@@ -48,11 +49,11 @@
     <Button
         android:id="@+id/forgetpass"
         android:layout_width="100dp"
-        android:layout_height="30dp"
+        android:layout_height="60dp"
         android:layout_marginLeft="280dp"
         android:layout_marginTop="420dp"
         android:background="@android:color/transparent"
-        android:text="Forget Password"
+        android:text="Forgot\nPassword"
         android:textColor="@color/black"
         android:textSize="10dp" />
 
