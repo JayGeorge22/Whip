@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                             if(task.isSuccessful()) {
                                 progressBar.setVisibility(View.GONE);
                                 // Redirect to home activity
-                                Intent intent = new Intent(getApplicationContext(),MainActivity2.class);
+                                Intent intent = new Intent(MainActivity.this,scan.class);
                                 startActivity(intent);
                             }
                             else {
