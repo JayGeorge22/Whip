@@ -3,13 +3,13 @@ package com.example.myapplication;
 import android.content.SharedPreferences;
 
 public class contact {
-    public String link = "null";
-    public String name = "null";
-    public String phone = "null";
-    public String email = "null";
-    public String instagram = "null";
-    public String snapchat = "null";
-    public String twitter = "null";
+    public String link = "";
+    public String name = "";
+    public String email = "";
+    public String phone = "";
+    public String instagram = "";
+    public String snapchat = "";
+    public String twitter = "";
 
     public void updateContactSP(String key, SharedPreferences sp) {
         String keyCategory = key.substring(0,key.length()-1);
@@ -45,5 +45,9 @@ public class contact {
         this.instagram = sp.getString(instagram, "");
         this.snapchat = sp.getString(snapchat, "");
         this.twitter = sp.getString(twitter, "");
+    }
+
+    public String getLink() {
+        return this.name + " ," + this.email + " ," + this.phone + " ," + this.instagram + " ," + this.snapchat + " ," + this.twitter + " ";
     }
 }

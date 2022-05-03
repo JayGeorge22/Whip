@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -14,7 +15,7 @@ import com.google.zxing.integration.android.IntentResult;
 public class scan extends AppCompatActivity {
     Button qr;
     Button scan;
-    Button contacts;
+    Button contactsButton;
     Button settings;
     Button btScan;
 
@@ -27,7 +28,7 @@ public class scan extends AppCompatActivity {
 
         qr =(Button)findViewById(R.id.qr);
         scan =(Button)findViewById(R.id.scan);
-        contacts =(Button)findViewById(R.id.contacts);
+        contactsButton =(Button)findViewById(R.id.contacts);
         settings =(Button)findViewById(R.id.settings);
 
         qr.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +39,7 @@ public class scan extends AppCompatActivity {
             }
         });
 
-        contacts.setOnClickListener(new View.OnClickListener() {
+        contactsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(scan.this, contacts.class);
@@ -79,6 +80,13 @@ public class scan extends AppCompatActivity {
         if(intentResult.getContents() != null){
             //what to do with info
             //intentREsult.getContents()
+            String info = intentResult.getContents();
+            String[] contact = info.split(",");
+
+            contacts.addContact(contact);
+
+            Toast toast = Toast.makeText(getApplicationContext(), "Contact "+contact[0]+"has been added", Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 }
