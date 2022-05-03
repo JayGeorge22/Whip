@@ -32,7 +32,7 @@ public class contacts extends AppCompatActivity {
 
         qr =(Button)findViewById(R.id.qr);
         scan =(Button)findViewById(R.id.scan);
-        contactsButton =(Button)findViewById(R.id.contacts);
+        contacts =(Button)findViewById(R.id.contacts);
         settings =(Button)findViewById(R.id.settings);
         list = findViewById(R.id.list);
         //SQLite stuff
