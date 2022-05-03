@@ -15,13 +15,13 @@ public class contacts extends AppCompatActivity {
 
     Button qr;
     Button scan;
-    Button contacts;
+    Button contactsButton;
     Button settings;
-    ExpandableListView list;
-    ArrayList<String> listGroup = new ArrayList<>();
-    HashMap<String,ArrayList<String>> listChild = new HashMap<>();
-    MainAdapter adapter;
     DBHelper DB;
+    static ExpandableListView list;
+    static ArrayList<String> listGroup = new ArrayList<>();
+    static HashMap<String,ArrayList<String>> listChild = new HashMap<>();
+    static MainAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class contacts extends AppCompatActivity {
 
         qr =(Button)findViewById(R.id.qr);
         scan =(Button)findViewById(R.id.scan);
-        contacts =(Button)findViewById(R.id.contacts);
+        contactsButton =(Button)findViewById(R.id.contacts);
         settings =(Button)findViewById(R.id.settings);
         list = findViewById(R.id.list);
         //SQLite stuff
@@ -44,14 +44,14 @@ public class contacts extends AppCompatActivity {
         arrayList.add("email: gmail");
         listChild.put(listGroup.get(0), arrayList);*/
 
-        for(int i=0; i<=10; i++){
+        /*for(int i=0; i<=10; i++){
             listGroup.add("Group"+i);
             ArrayList<String> arrayList = new ArrayList<>();
             for (int j=0; j<=5; j++){
                 arrayList.add("item"+j);
             }
             listChild.put(listGroup.get(i),arrayList);
-        }
+        }*/
 
         adapter = new MainAdapter(listGroup, listChild);
         list.setAdapter(adapter);
@@ -79,5 +79,24 @@ public class contacts extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Intent i = getIntent();
+        Bundle b = i.getExtras();
+        if(b != null)
+        {
+            Intent startIntent = new Intent(contacts.this, MainActivity2.class);
+            startActivity(startIntent);
+        }
+    }
+
+    public static void addContact(String [] contact) {
+        listGroup.add(contact[0]);
+        ArrayList<String> arrayList = new ArrayList<>();
+        for (int i=1; i<=5; i++){
+            arrayList.add(contact[i]);
+        }
+        listChild.put(listGroup.get(listGroup.indexOf(contact[0])),arrayList);
+
+        adapter.notifyDataSetChanged();
     }
 }

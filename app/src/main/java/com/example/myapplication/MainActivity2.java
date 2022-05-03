@@ -30,7 +30,7 @@ import java.util.Map;
 public class MainActivity2 extends AppCompatActivity {
     Button qr;
     Button scan;
-    Button contacts;
+    Button contactsButton;
     Button settings;
 
     Button preset1;
@@ -49,7 +49,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         qr = findViewById(R.id.qr);
         scan = findViewById(R.id.scan);
-        contacts = findViewById(R.id.contacts);
+        contactsButton = findViewById(R.id.contacts);
         settings = findViewById(R.id.settings);
 
         scan.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +61,7 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
-        contacts.setOnClickListener(new View.OnClickListener() {
+        contactsButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -86,24 +86,24 @@ public class MainActivity2 extends AppCompatActivity {
         SharedPreferences SP =
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext() );
 
-        infoPreset1.setContact(SP, "name1", "email1", "phone1", "", "", "");
-        infoPreset2.setContact(SP, "name2", "email2", "phone2", "", "", "");
-        infoPreset3.setContact(SP, "name3", "email3", "phone3", "", "", "");
+        infoPreset1.setContact(SP, "name1", "email1", "phone1", "instagram1", "snapchat1", "twitter1");
+        infoPreset2.setContact(SP, "name2", "email2", "phone2", "instagram2", "snapchat2", "twitter2");
+        infoPreset3.setContact(SP, "name3", "email3", "phone3", "instagram3", "snapchat3", "twitter3");
 
-        setQr(infoPreset1.link);
+        setQr(infoPreset1.getLink());
 
         preset1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setQr(infoPreset1.link);
+                setQr(infoPreset1.getLink());
             }
         });
 
         preset2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (infoPreset2.link != "null") {
-                    setQr(infoPreset2.link);
+                if (!infoPreset2.getLink().equals(" , , , , , ")) {
+                    setQr(infoPreset2.getLink());
                 }
                 else{
                     Toast toast = Toast.makeText(getApplicationContext(), "No preset has been made", Toast.LENGTH_SHORT);
@@ -115,8 +115,8 @@ public class MainActivity2 extends AppCompatActivity {
         preset3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (infoPreset3.link != "null") {
-                    setQr(infoPreset3.link);
+                if (!infoPreset3.getLink().equals(" , , , , , ")) {
+                    setQr(infoPreset3.getLink());
                 }
                 else{
                     Toast toast = Toast.makeText(getApplicationContext(), "No preset has been made", Toast.LENGTH_SHORT);
@@ -124,6 +124,7 @@ public class MainActivity2 extends AppCompatActivity {
                 }
             }
         });
+
 
 
     }

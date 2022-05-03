@@ -59,7 +59,10 @@ public class MainActivity extends AppCompatActivity {
                             if(task.isSuccessful()) {
                                 progressBar.setVisibility(View.GONE);
                                 // Redirect to home activity
-                                Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+                                //note: intent needs to go to contacts class and load the adapter
+                                //and then will automatically redirect to home activity
+                                Intent intent = new Intent(MainActivity.this,contacts.class);
+                                intent.putExtra("login", 1);
                                 startActivity(intent);
                             }
                             else {
