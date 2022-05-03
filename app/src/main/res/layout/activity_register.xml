@@ -50,7 +50,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:background="@drawable/outline_button"
-        android:text="Register" />
+        android:text="Register"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/loginreturn"
@@ -61,7 +62,8 @@
         android:textStyle="bold"
         android:layout_marginTop="130dp"
         android:layout_marginLeft="195dp"
-        android:text="Login" />
+        android:text="Login"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/textView"
