@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,8 @@ public class addContact  extends AppCompatActivity {
     Button contactsButton;
     Button settings;
     Button saveContact;
+    DBHelper DB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +29,7 @@ public class addContact  extends AppCompatActivity {
         contactsButton =(Button)findViewById(R.id.contacts);
         settings =(Button)findViewById(R.id.settings);
         saveContact = (Button)findViewById(R.id.save_contact);
+        DB = new DBHelper(addContact.this);
 
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +75,13 @@ public class addContact  extends AppCompatActivity {
                 c.snapchat = ((EditText) findViewById(R.id.new_contact_snapchat)).getText().toString();
 
                 contacts.addContact(c.getLink().split(","));
+                Cursor res =DB.getdata();
+                StringBuffer buffer = new StringBuffer();
+                while(res.moveToNext()){
+                    buffer.append(res.getString(0));
+                }
+                String data = buffer.toString();
+                DB.insertuserdata(data+"1", c.name, c.email, c.phone, c.instagram, c.twitter, c.snapchat);
 
                 Intent intent =new Intent(addContact.this, contacts.class);
                 startActivity(intent);

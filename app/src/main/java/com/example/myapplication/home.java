@@ -19,8 +19,6 @@ public class home extends AppCompatActivity {
         //Intent intent = getIntent();
         //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
-        setContentView(R.layout.activity_home2);
-
         /*qr =(Button)findViewById(R.id.qr);
         scan =(Button)findViewById(R.id.scan);
         contacts =(Button)findViewById(R.id.contacts);

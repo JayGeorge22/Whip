@@ -20,7 +20,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase DB, int i, int i1) {
-        DB.execSQL("drop Table if exists UserdetailWHIP.db");
     }
 
     public boolean insertuserdata(String id, String name, String email, String phone, String instagram, String snapchat, String twitter){
