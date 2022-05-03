@@ -21,6 +21,7 @@ public class contacts extends AppCompatActivity {
     ArrayList<String> listGroup = new ArrayList<>();
     HashMap<String,ArrayList<String>> listChild = new HashMap<>();
     MainAdapter adapter;
+    DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +34,15 @@ public class contacts extends AppCompatActivity {
         scan =(Button)findViewById(R.id.scan);
         contacts =(Button)findViewById(R.id.contacts);
         settings =(Button)findViewById(R.id.settings);
-
         list = findViewById(R.id.list);
+        //SQLite stuff
+        DB = new DBHelper(this);
+
+        /*listGroup.add("bill");
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add("phone: 999");
+        arrayList.add("email: gmail");
+        listChild.put(listGroup.get(0), arrayList);*/
 
         for(int i=0; i<=10; i++){
             listGroup.add("Group"+i);

@@ -9,11 +9,11 @@
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="63dp"
+        android:layout_height="22dp"
         android:text="contacts"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/qr"
@@ -80,10 +80,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ExpandableListView
+        android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/settings"
-        android:id="@+id/list"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@id/text"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-25dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
