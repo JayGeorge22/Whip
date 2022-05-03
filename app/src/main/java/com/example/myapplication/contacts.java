@@ -89,7 +89,6 @@ public class contacts extends AppCompatActivity {
         Cursor res = DB.getdata();
         StringBuffer buffer = new StringBuffer();
         while(res.moveToNext()){
-            buffer.append(res.getString(0)+',');
             buffer.append(res.getString(1)+',');
             buffer.append(res.getString(2)+',');
             buffer.append(res.getString(3)+',');
@@ -99,10 +98,20 @@ public class contacts extends AppCompatActivity {
         }
 
         String data = buffer.toString();
-        String[] C = data.split("#");
-        for (String a : C)
 
-        addContact(a.split(","));
+        String[] C = data.split("#");
+        for (String a : C){
+
+            //temp
+            System.out.println("\n\n1\n"+a+"\n1\n\n");
+            String[] oo = a.split(",");
+            for (String pp : oo) {
+                System.out.println(pp+"  909  ");
+            }
+            //temp
+
+            //addContact();
+        }
 
     }
 
