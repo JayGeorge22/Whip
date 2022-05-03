@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".contacts"
-    android:background="@drawable/img_1">
+    android:background="@drawable/img_1"
+    tools:context=".contacts">
 
     <TextView
         android:id="@+id/text"
@@ -22,9 +22,9 @@
         android:layout_marginEnd="300dp"
         android:background="@drawable/outline_button"
         app:icon="@drawable/qr_icon_black"
-        app:iconTint="@color/black"
         app:iconGravity="textStart"
         app:iconSize="40dp"
+        app:iconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -38,9 +38,9 @@
         android:layout_marginEnd="200dp"
         android:background="@drawable/outline_button"
         app:icon="@drawable/scan_icon"
-        app:iconTint="@color/black"
         app:iconGravity="textStart"
         app:iconSize="40dp"
+        app:iconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
@@ -55,9 +55,9 @@
         android:layout_marginEnd="100dp"
         android:background="@drawable/outline_button"
         app:icon="@drawable/contacts_icon"
-        app:iconTint="@color/black"
         app:iconGravity="textStart"
         app:iconSize="40dp"
+        app:iconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -71,9 +71,24 @@
         android:layout_marginEnd="10dp"
         android:background="@drawable/outline_button"
         app:icon="@drawable/settings_icon"
-        app:iconTint="@color/black"
         app:iconGravity="textStart"
         app:iconSize="40dp"
+        app:iconTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/add_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="161dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="86dp"
+        android:background="@drawable/outline_button"
+        android:text="Add\nContact"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
