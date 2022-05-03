@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,10 +18,10 @@ public class contacts extends AppCompatActivity {
     Button scan;
     Button contacts;
     Button settings;
-    ExpandableListView list;
-    ArrayList<String> listGroup = new ArrayList<>();
-    HashMap<String,ArrayList<String>> listChild = new HashMap<>();
-    MainAdapter adapter;
+    static ExpandableListView list;
+    static ArrayList<String> listGroup = new ArrayList<>();
+    static HashMap<String,ArrayList<String>> listChild = new HashMap<>();
+    static MainAdapter adapter;
     DBHelper DB;
 
     @Override
@@ -38,6 +39,23 @@ public class contacts extends AppCompatActivity {
         //SQLite stuff
         DB = new DBHelper(this);
 
+        boolean insert = DB.insertuserdata("1", "bob", "email", "ph", "insta", "sc", "tweet");
+
+
+        Cursor res = DB.getdata();
+        StringBuffer buffer = new StringBuffer();
+        while(res.moveToNext()){
+            buffer.append(res.getString(0)+',');
+            buffer.append(res.getString(1)+',');
+            buffer.append(res.getString(2)+',');
+            buffer.append(res.getString(3)+',');
+            buffer.append(res.getString(4)+',');
+            buffer.append(res.getString(5)+',');
+            buffer.append(res.getString(6)+'\n');
+        }
+        String data = buffer.toString();
+
+        System.out.println(data+"test");
         /*listGroup.add("bill");
         ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add("phone: 999");
@@ -64,6 +82,8 @@ public class contacts extends AppCompatActivity {
             }
         });
 
+
+
         qr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,5 +99,24 @@ public class contacts extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Intent i = getIntent();
+        Bundle b = i.getExtras();
+        if(b != null)
+        {
+            Intent startIntent = new Intent(contacts.this, MainActivity2.class);
+            startActivity(startIntent);
+        }
+    }
+
+    public static void addContact(String [] contact) {
+        listGroup.add(contact[0]);
+        ArrayList<String> arrayList = new ArrayList<>();
+        for (int i=1; i<=5; i++){
+            arrayList.add(contact[i]);
+        }
+        listChild.put(listGroup.get(listGroup.indexOf(contact[0])),arrayList);
+
+        adapter.notifyDataSetChanged();
     }
 }
