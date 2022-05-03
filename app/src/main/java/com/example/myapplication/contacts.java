@@ -15,14 +15,15 @@ public class contacts extends AppCompatActivity {
 
     Button qr;
     Button scan;
-    Button contactsButton;
+    Button contacts;
     Button settings;
     Button addContact;
-    DBHelper DB;
-    static ExpandableListView list;
+
+    ExpandableListView list;
     static ArrayList<String> listGroup = new ArrayList<>();
     static HashMap<String,ArrayList<String>> listChild = new HashMap<>();
     static MainAdapter adapter;
+    DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class contacts extends AppCompatActivity {
 
         qr =(Button)findViewById(R.id.qr);
         scan =(Button)findViewById(R.id.scan);
-        contactsButton =(Button)findViewById(R.id.contacts);
+        contacts =(Button)findViewById(R.id.contacts);
         settings =(Button)findViewById(R.id.settings);
         addContact = (Button)findViewById(R.id.add_contact);
         list = findViewById(R.id.list);
@@ -46,14 +47,14 @@ public class contacts extends AppCompatActivity {
         arrayList.add("email: gmail");
         listChild.put(listGroup.get(0), arrayList);*/
 
-        /*for(int i=0; i<=10; i++){
+        for(int i=0; i<=10; i++){
             listGroup.add("Group"+i);
             ArrayList<String> arrayList = new ArrayList<>();
             for (int j=0; j<=5; j++){
                 arrayList.add("item"+j);
             }
             listChild.put(listGroup.get(i),arrayList);
-        }*/
+        }
 
         adapter = new MainAdapter(listGroup, listChild);
         list.setAdapter(adapter);

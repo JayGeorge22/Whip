@@ -10,17 +10,17 @@ import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(Context context) {
-        super(context, "UserdataWHIP.db", null, 1);
+        super(context, "UserdetailWHIP.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        DB.execSQL("create Table UserdetailsWHIP(name TEXT, phone TEXT, email TEXT, instagram TEXT, snapchat TEXT, twitter TEXT)");
+        DB.execSQL("create Table if not exists UserdetailWHIP(id TEXT, name TEXT, phone TEXT, email TEXT, instagram TEXT, snapchat TEXT, twitter TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase DB, int i, int i1) {
-        DB.execSQL("drop Table if exists UserdataWHIP.db");
+        DB.execSQL("drop Table if exists UserdetailWHIP.db");
     }
 
     public boolean insertuserdata(String id, String name, String email, String phone, String instagram, String snapchat, String twitter){
@@ -33,7 +33,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("instagram", instagram);
         contentValues.put("snapchat", snapchat);
         contentValues.put("twitter", twitter);
-        long result = DB.insert("UserdetailsWHIP", null, contentValues);
+        long result = DB.insert("UserdetailWHIP", null, contentValues);
         if (result==-1){
             return false;
         }
@@ -54,7 +54,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("twitter", twitter);
         Cursor cursor = DB.rawQuery("Select * from UserdetailWHIP where id = ?", new String[]{id});
         if(cursor.getCount()>0) {
-            long result = DB.update("UserdetailsWHIP", contentValues, "id=?", new String[]{id});
+            long result = DB.update("UserdetailWHIP", contentValues, "id=?", new String[]{id});
             if (result == -1) {
                 return false;
             } else {
@@ -66,11 +66,11 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-    public boolean deleteuserdata(String id, String name, String email, String phone, String instagram, String snapchat, String twitter){
+    public boolean deleteuserdata(String id){
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select * from UserdetailWHIP where id = ?", new String[]{id});
         if(cursor.getCount()>0) {
-            long result = DB.delete("UserdetailsWHIP", "id=?", new String[]{id});
+            long result = DB.delete("UserdetailWHIP", "id=?", new String[]{id});
             if (result == -1) {
                 return false;
             } else {
@@ -81,7 +81,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Cursor getdata(String id, String name, String email, String phone, String instagram, String snapchat, String twitter) {
+    public Cursor getdata() {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("Select * from UserdetailWHIP", null);
         return cursor;
