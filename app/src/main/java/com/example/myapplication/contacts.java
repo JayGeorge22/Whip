@@ -47,14 +47,14 @@ public class contacts extends AppCompatActivity {
         arrayList.add("email: gmail");
         listChild.put(listGroup.get(0), arrayList);*/
 
-        for(int i=0; i<=10; i++){
+        /*for(int i=0; i<=10; i++){
             listGroup.add("Group"+i);
             ArrayList<String> arrayList = new ArrayList<>();
             for (int j=0; j<=5; j++){
                 arrayList.add("item"+j);
             }
             listChild.put(listGroup.get(i),arrayList);
-        }
+        }*/
 
         adapter = new MainAdapter(listGroup, listChild);
         list.setAdapter(adapter);
