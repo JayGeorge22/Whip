@@ -17,6 +17,7 @@ public class contacts extends AppCompatActivity {
     Button scan;
     Button contactsButton;
     Button settings;
+    Button addContact;
     DBHelper DB;
     static ExpandableListView list;
     static ArrayList<String> listGroup = new ArrayList<>();
@@ -34,6 +35,7 @@ public class contacts extends AppCompatActivity {
         scan =(Button)findViewById(R.id.scan);
         contactsButton =(Button)findViewById(R.id.contacts);
         settings =(Button)findViewById(R.id.settings);
+        addContact = (Button)findViewById(R.id.add_contact);
         list = findViewById(R.id.list);
         //SQLite stuff
         DB = new DBHelper(this);
@@ -80,6 +82,14 @@ public class contacts extends AppCompatActivity {
             }
         });
 
+        addContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(contacts.this, addContact.class);
+                startActivity(intent);
+            }
+        });
+
         Intent i = getIntent();
         Bundle b = i.getExtras();
         if(b != null)
@@ -92,9 +102,14 @@ public class contacts extends AppCompatActivity {
     public static void addContact(String [] contact) {
         listGroup.add(contact[0]);
         ArrayList<String> arrayList = new ArrayList<>();
-        for (int i=1; i<=5; i++){
+        /*for (int i=1; i<=5; i++){
             arrayList.add(contact[i]);
-        }
+        }*/
+        arrayList.add("Email: "+contact[1]);
+        arrayList.add("Phone: "+contact[2]);
+        arrayList.add("Instagram: "+contact[3]);
+        arrayList.add("Snapchat: "+contact[4]);
+        arrayList.add("Twitter: "+contact[5]);
         listChild.put(listGroup.get(listGroup.indexOf(contact[0])),arrayList);
 
         adapter.notifyDataSetChanged();
